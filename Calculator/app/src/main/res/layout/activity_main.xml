@@ -15,7 +15,7 @@
         android:background="@color/figureBackground"
         android:fontFamily="casual"
         android:gravity="center_vertical"
-        android:text="1+2/3"
+        android:text=""
         android:id="@+id/textExp"
         android:textAlignment="textEnd"
         android:textColor="@color/textBlack"
@@ -29,7 +29,8 @@
         android:background="@color/figureBackground"
         android:fontFamily="casual"
         android:gravity="center_vertical"
-        android:text="2,520"
+        android:text=""
+        android:id="@+id/textResult"
         android:textAlignment="textEnd"
         android:textColor="@android:color/black"
         android:textSize="52sp"
@@ -43,43 +44,47 @@
         android:rowCount="5">
 
         <Button
-            android:id="@+id/b10"
+            android:id="@+id/bPlus"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg"
             android:fontFamily="casual"
             android:text="+"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/b11"
+            android:id="@+id/bSub"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg"
             android:fontFamily="casual"
             android:text="-"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/b12"
+            android:id="@+id/bMul"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg"
             android:fontFamily="casual"
             android:text="×"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/b13"
+            android:id="@+id/bDiv"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg"
             android:fontFamily="casual"
             android:text="/"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -90,6 +95,7 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="7"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -100,6 +106,7 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="8"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -110,16 +117,18 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="9"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/b14"
+            android:id="@+id/bLeft"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg"
             android:fontFamily="casual"
             android:text="("
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -130,6 +139,7 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="4"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -140,6 +150,7 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="5"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -150,16 +161,18 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="6"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/b15"
+            android:id="@+id/bRight"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg"
             android:fontFamily="casual"
             android:text=")"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -170,6 +183,7 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="1"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -180,6 +194,7 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="2"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -190,10 +205,11 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="3"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/b16"
+            android:id="@+id/bEqual"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowSpan="2"
@@ -205,13 +221,14 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/bc"
+            android:id="@+id/bClean"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="C"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
@@ -222,16 +239,18 @@
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="0"
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/b17"
+            android:id="@+id/bDot"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
             android:layout_rowWeight="1"
             android:background="@drawable/btn_bg_num"
             android:fontFamily="casual"
             android:text="."
+            android:textColor="@android:color/black"
             android:textSize="30sp" />
 
     </GridLayout>

@@ -3,173 +3,140 @@ package com.example.caoliyuan.calculator;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    //显示元素声明
+    private Button b1=null;
+    private Button b2=null;
+    private Button b3=null;
+    private Button b4=null;
+    private Button b5=null;
+    private Button b6=null;
+    private Button b7=null;
+    private Button b8=null;
+    private Button b9=null;
+    private Button b0=null;
+    private Button bPlus=null;
+    private Button bSub=null;
+    private Button bMul=null;
+    private Button bDiv=null;
+    private Button bLeft=null;
+    private Button bRight=null;
+    private Button bEqual=null;
+    private Button bDot=null;
+    private Button bClean=null;
+    private TextView textExp=null;
+    private TextView textResult=null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        Button b1=findViewById(R.id.b1);
-        Button b2=findViewById(R.id.b2);
-        Button b3=findViewById(R.id.b3);
-        Button b4=findViewById(R.id.b4);
-        Button b5=findViewById(R.id.b5);
-        Button b6=findViewById(R.id.b6);
-        Button b7=findViewById(R.id.b7);
-        Button b8=findViewById(R.id.b8);
-        Button b9=findViewById(R.id.b9);
-        Button b0=findViewById(R.id.b0);
-        Button b10=findViewById(R.id.b10);
-        Button b11=findViewById(R.id.b11);
-        Button b12=findViewById(R.id.b12);
-        Button b13=findViewById(R.id.b13);
-        Button b14=findViewById(R.id.b14);
-        Button b15=findViewById(R.id.b15);
-        Button b16=findViewById(R.id.b16);
-        Button b17=findViewById(R.id.b17);
-        Button bc=findViewById(R.id.bc);
+        b1=findViewById(R.id.b1);
+        b2=findViewById(R.id.b2);
+        b3=findViewById(R.id.b3);
+        b4=findViewById(R.id.b4);
+        b5=findViewById(R.id.b5);
+        b6=findViewById(R.id.b6);
+        b7=findViewById(R.id.b7);
+        b8=findViewById(R.id.b8);
+        b9=findViewById(R.id.b9);
+        b0=findViewById(R.id.b0);
+        bPlus=findViewById(R.id.bPlus);
+        bSub=findViewById(R.id.bSub);
+        bMul=findViewById(R.id.bMul);
+        bDiv=findViewById(R.id.bDiv);
+        bLeft=findViewById(R.id.bLeft);
+        bRight=findViewById(R.id.bRight);
+        bEqual=findViewById(R.id.bEqual);
+        bDot=findViewById(R.id.bDot);
+        bClean=findViewById(R.id.bClean);
 
-        final TextView textExp=findViewById(R.id.textExp);
+        textExp=findViewById(R.id.textExp);
+        textResult=findViewById(R.id.textResult  );
 
-        b1.setOnClickListener(new View.OnClickListener() {
+
+        View.OnClickListener btnListener=new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textExp.setText(textExp.getText()+"1");
+                String text=((Button)view).getText().toString();
+                addStrInTextView(text);
+            }
+        };
+
+
+        b1.setOnClickListener(btnListener);
+        b2.setOnClickListener(btnListener);
+        b3.setOnClickListener(btnListener);
+        b4.setOnClickListener(btnListener);
+        b5.setOnClickListener(btnListener);
+        b6.setOnClickListener(btnListener);
+        b7.setOnClickListener(btnListener);
+        b8.setOnClickListener(btnListener);
+        b9.setOnClickListener(btnListener);
+        b0.setOnClickListener(btnListener);
+        bPlus.setOnClickListener(btnListener);
+        bSub.setOnClickListener(btnListener);
+        bMul.setOnClickListener(btnListener);
+        bDiv.setOnClickListener(btnListener);
+        bLeft.setOnClickListener(btnListener);
+        bRight.setOnClickListener(btnListener);
+        bDot.setOnClickListener(btnListener);
+
+        //单击删除一个
+        bClean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteOneInTextView();
+            }
+        });
+        //长按删除全部
+        bClean.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                cleanTextView();
+                return true;
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        bEqual.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                textExp.setText(textExp.getText()+"2");
-            }
-        });
-
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"3");
-            }
-        });
-
-        b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"4");
-            }
-        });
-
-        b5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"5");
-            }
-        });
-
-        b6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"6");
-            }
-        });
-
-
-        b7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"7");
-            }
-        });
-
-        b8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"8");
-            }
-        });
-
-        b9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"9");
-            }
-        });
-
-        b0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"0");
+                calculate();
             }
         });
 
 
-        b10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"+");
-            }
-        });
-
-        b11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"-");
-            }
-        });
-
-        b12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"×");
-            }
-        });
-
-        b13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"/");
-            }
-        });
-
-        b14.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"(");
-            }
-        });
-
-        b15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+")");
-            }
-        });
-
-        b16.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+"=");
-            }
-        });
-
-        b17.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()+".");
-            }
-        });
-
-        /*bc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textExp.setText(textExp.getText()-"");
-            }
-        });*/
 
     }
-    
+
+    //表达式添加
+    private void addStrInTextView(String s){
+        textExp.setText(textExp.getText()+s);
+    }
+    //表达式删除
+    private void deleteOneInTextView(){
+        String originStr=textExp.getText().toString();
+        //避免越界
+        String newStr = originStr.length()>0 ? originStr.substring(0,textExp.getText().length()-1) : originStr;
+        textExp.setText(newStr);
+    }
+    //清空
+    private void cleanTextView(){
+        textExp.setText("");
+    }
+    //计算
+    private void calculate(){
+        String exp=textExp.getText().toString();
+        Calculator calculator=new Calculator();
+        String rsl=calculator.calculate(exp.replace('×','*'));
+        textResult.setText(rsl);
+    }
 }
