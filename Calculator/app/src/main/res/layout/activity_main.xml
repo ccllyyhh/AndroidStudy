@@ -20,7 +20,7 @@
         android:textAlignment="textEnd"
         android:textColor="@color/textBlack"
         android:textSize="24sp"
-        tools:ignore="RtlCompat" />
+        tools:ignore="RtlCompat"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -41,7 +41,51 @@
         android:layout_height="0dp"
         android:layout_weight="40"
         android:columnCount="4"
-        android:rowCount="5">
+        android:rowCount="6">
+
+        <Button
+            android:id="@+id/bdeg"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:layout_rowWeight="1"
+            android:background="@drawable/btn_bg"
+            android:fontFamily="casual"
+            android:text="deg"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/bsin"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:layout_rowWeight="1"
+            android:background="@drawable/btn_bg"
+            android:fontFamily="casual"
+            android:text="sin"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/bcos"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:layout_rowWeight="1"
+            android:background="@drawable/btn_bg"
+            android:fontFamily="casual"
+            android:text="cos"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btan"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:layout_rowWeight="1"
+            android:background="@drawable/btn_bg"
+            android:fontFamily="casual"
+            android:text="tan"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/bPlus"

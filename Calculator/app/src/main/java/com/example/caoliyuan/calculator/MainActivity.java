@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.lang.reflect.Field;
 
 public class MainActivity extends Activity {
 
@@ -30,13 +33,29 @@ public class MainActivity extends Activity {
     private Button bEqual=null;
     private Button bDot=null;
     private Button bClean=null;
+    private Button bdeg=null;
+    private Button bsin=null;
+    private Button bcos=null;
+    private Button btan=null;
     private TextView textExp=null;
     private TextView textResult=null;
+
+    private Boolean isDeg=true;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*try{
+            ViewConfiguration config = ViewConfiguration.get(this);
+            Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+            if(menuKeyField!=null){
+                menuKeyField.setAccessible(true);
+                menuKeyField.setBoolean(config,false);
+            }
+        } catch (Exception ex) {
+
+        }*/
 
         setContentView(R.layout.activity_main);
         b1=findViewById(R.id.b1);
@@ -58,9 +77,13 @@ public class MainActivity extends Activity {
         bEqual=findViewById(R.id.bEqual);
         bDot=findViewById(R.id.bDot);
         bClean=findViewById(R.id.bClean);
+        bdeg=findViewById(R.id.bdeg);
+        bsin=findViewById(R.id.bsin);
+        bcos=findViewById(R.id.bcos);
+        btan=findViewById(R.id.btan);
 
         textExp=findViewById(R.id.textExp);
-        textResult=findViewById(R.id.textResult  );
+        textResult=findViewById(R.id.textResult);
 
 
         View.OnClickListener btnListener=new View.OnClickListener() {
@@ -89,6 +112,9 @@ public class MainActivity extends Activity {
         bLeft.setOnClickListener(btnListener);
         bRight.setOnClickListener(btnListener);
         bDot.setOnClickListener(btnListener);
+        bsin.setOnClickListener(btnListener);
+        bcos.setOnClickListener(btnListener);
+        btan.setOnClickListener(btnListener);
 
         //单击删除一个
         bClean.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +136,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 calculate();
+            }
+        });
+
+        bdeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                isDeg=!isDeg;
+                bdeg.setText(isDeg?"Deg":"Rad");
             }
         });
 
@@ -135,8 +169,9 @@ public class MainActivity extends Activity {
     //计算
     private void calculate(){
         String exp=textExp.getText().toString();
-        Calculator calculator=new Calculator();
-        String rsl=calculator.calculate(exp.replace('×','*'));
+//        Calculator calculator=new Calculator();
+        Calculatorv2 calculatorv2=new Calculatorv2();
+        String rsl=calculatorv2.process(exp,isDeg);
         textResult.setText(rsl);
     }
 }

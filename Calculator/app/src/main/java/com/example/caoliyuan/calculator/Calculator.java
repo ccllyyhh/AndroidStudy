@@ -162,6 +162,7 @@ public class Calculator {
 					e=stack.pop();
 					leftBrackets--;
 					break;
+
 				default:
 					break;
 			}
@@ -200,6 +201,7 @@ public class Calculator {
 					case "/":
 						re=number1.divide(number2,10,ROUND_HALF_DOWN);
 						break;
+
 					default:
 						break;
 				}
