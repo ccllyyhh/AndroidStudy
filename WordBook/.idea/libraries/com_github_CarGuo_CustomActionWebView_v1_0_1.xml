@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.github.CarGuo:CustomActionWebView-v1.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CustomActionWebView-v1.0.1.aar/e08f6db1678ac219128f92a43627016b/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CustomActionWebView-v1.0.1.aar/e08f6db1678ac219128f92a43627016b/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

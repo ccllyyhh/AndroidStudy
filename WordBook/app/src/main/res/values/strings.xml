@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WordsBook</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="slogan">HiWords_</string>
+    <string name="intro">Search all the words in the world for what you want</string>
+</resources>
