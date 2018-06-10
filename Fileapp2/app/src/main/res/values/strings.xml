@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fileapp</string>
+    <string name="hint_id">ID Number</string>
+    <string name="hint_name">Name</string>
+    <string name="input">Write Data to File</string>
+    <string name="output">Read Data from File</string>
+</resources>

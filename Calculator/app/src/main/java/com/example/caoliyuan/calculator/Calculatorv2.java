@@ -36,12 +36,12 @@ public class Calculatorv2 {
         int weight[];  //保存operator栈中运算符的优先级，以topOp计数
         double number[];  //保存数字，以topNum计数
         char ch, ch_gai, operator[];//operator[]保存运算符，以topOp计数
-        String num;//记录数字，str以+-×÷()sctgl!√^分段，+-×÷()sctgl!√^字符之间的字符串即为数字
+        String num;//记录数字，str以+-×÷()sct分段，+-×÷()sct字符之间的字符串即为数字
         weight = new int[MAXLEN];
         number = new double[MAXLEN];
         operator = new char[MAXLEN];
         String expression = str;
-        StringTokenizer expToken = new StringTokenizer(expression,"+-×÷()sctgl!√^");
+        StringTokenizer expToken = new StringTokenizer(expression,"+-×÷()sct");
         int i = 0;
         while (i < expression.length()) {
             ch = expression.charAt(i);
@@ -74,7 +74,7 @@ public class Calculatorv2 {
             if (ch == '(') weightPlus+=4;
             if (ch == ')') weightPlus-=4;
             if (ch == '-' && flag == 1 || ch == '+' || ch == '×'|| ch == '÷' ||
-                    ch == 's' ||ch == 'c' || ch == 't' || ch == 'g' ) {
+                    ch == 's' ||ch == 'c' || ch == 't'  ) {
                 switch (ch) {
                     //+-的优先级最低，为1
                     case '+':
